@@ -4,7 +4,7 @@
 
   /* ============ LANGUAGE DETECTION ============ */
   var LANG_PATTERNS = {
-    ur: /[\u0600-\u06FF]/,
+    ur: /[\u0600-\u06FF]|\b(kaisay|kesay|kya|kyaa|hai|hun|ho|tum|aap|mein|main|karo|karna|batao|bataein|shukriya|assalam|salam|walaikum|khuda|hafiz|acha|achha|bohat|bahut|nahi|nahin|kaise|kese|konsa|kaunsa|muft|behtreen|tasveer|awaz|parhai|karobar|likhna|poocho|poochein|sawal|jawab|madad|khushi|wapas|alvida)\b/i,
     hi: /[\u0900-\u097F]/,
     ar: /[\u0600-\u06FF]/,
     es: /\b(hola|gracias|por favor|qué|cuál|cómo|dónde|herramienta|gratis|mejor)\b/i,
@@ -139,6 +139,8 @@
       a: 'Click <b>Allow</b> on the notification prompt (or the bell icon) to get instant alerts when we publish new AI tool guides!' },
 
     /* ---- GREETINGS ---- */
+    { k: ['kaisay ho', 'kesay ho', 'kya haal', 'kya hal', 'how are you', 'how r u', 'how are u'],
+      a: '__HOWAREYOU__' },
     { k: ['hello', 'hi', 'hey', 'salam', 'assalam', 'hola', 'bonjour', 'hallo', 'namaste', 'aoa', 'good morning', 'good evening'],
       a: '__GREETING__' },
     { k: ['thank', 'shukriya', 'shukria', 'dhanyavad', 'gracias', 'merci', 'danke', 'obrigado', 'great', 'awesome', 'nice', 'perfect', 'love'],
@@ -157,6 +159,16 @@
     ar: 'مع السلامة! 👋 عد في أي وقت لأدلة الذكاء الاصطناعي المجانية!'
   };
 
+  var HOWAREYOU_MSGS = {
+    en: 'I am doing great, thanks for asking! 😊 How can I help you with <b>free AI tools</b> today?',
+    ur: 'Main bilkul theek hun, poochne ka shukriya! 😊 Aaj <b>muft AI tools</b> mein aapki kya madad kar sakta hun?',
+    hi: 'Main bilkul theek hun, poochhne ke liye dhanyavaad! 😊 Aaj <b>muft AI tools</b> mein aapki kya madad kar sakta hun?',
+    es: '¡Estoy muy bien, gracias por preguntar! 😊 ¿Cómo puedo ayudarte con <b>herramientas de IA gratuitas</b> hoy?',
+    fr: 'Je vais très bien, merci de demander! 😊 Comment puis-je vous aider avec les <b>outils IA gratuits</b>?',
+    de: 'Mir geht es super, danke der Nachfrage! 😊 Wie kann ich Ihnen heute mit <b>kostenlosen KI-Tools</b> helfen?',
+    ar: 'أنا بخير، شكراً لسؤالك! 😊 كيف يمكنني مساعدتك في <b>أدوات الذكاء الاصطناعي المجانية</b> اليوم؟'
+  };
+
   function findAnswer(q, lang) {
     var ql = q.toLowerCase();
     for (var i = 0; i < KNOWLEDGE.length; i++) {
@@ -167,6 +179,7 @@
           if (ans === '__GREETING__') return t(lang, 'greeting');
           if (ans === '__THANKS__') return t(lang, 'thanks');
           if (ans === '__BYE__') return BYE_MSGS[lang] || BYE_MSGS.en;
+          if (ans === '__HOWAREYOU__') return HOWAREYOU_MSGS[lang] || HOWAREYOU_MSGS.en;
           return ans;
         }
       }
