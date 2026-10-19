@@ -20,26 +20,27 @@
   });
 </script>
 <style>
-.studio-wrap { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem 3rem; }
-.studio-hero { text-align: center; margin-bottom: 2rem; padding: 3rem 1.5rem; background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%); border-radius: 24px; border: 1px solid #1e293b; position: relative; overflow: hidden; }
-.studio-hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(99,102,241,.12) 0%, transparent 60%); animation: glow 8s ease-in-out infinite; }
+.studio-wrap { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem 3rem; }
+.studio-hero { text-align: center; margin-bottom: 2rem; padding: 4rem 1.5rem; background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%); border-radius: 24px; border: 1px solid #1e293b; position: relative; overflow: hidden; }
+.studio-hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(99,102,241,.15) 0%, transparent 60%); animation: glow 8s ease-in-out infinite; }
 @keyframes glow { 0%,100% { transform: translate(0,0); } 50% { transform: translate(5%,5%); } }
-.studio-hero h1 { font-size: 2.8rem; margin-bottom: .75rem; background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; position: relative; }
-.studio-hero p { color: #94a3b8; max-width: 640px; margin: 0 auto; font-size: 1.1rem; position: relative; }
-.studio-hero .founder { margin-top: 1rem; font-size: .9rem; color: #64748b; position: relative; }
+.studio-hero h1 { font-size: 3rem; margin-bottom: .75rem; background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; position: relative; }
+.studio-hero p { color: #cbd5e1; max-width: 640px; margin: 0 auto; font-size: 1.15rem; position: relative; }
+.studio-hero .founder { margin-top: 1.25rem; font-size: .95rem; color: #94a3b8; position: relative; }
 .studio-hero .founder b { color: #a5b4fc; }
+.launch-box { text-align: center; margin: 2.5rem 0; padding: 2.5rem; background: #0f172a; border: 1px solid #1e293b; border-radius: 20px; }
+.launch-box h2 { color: #e2e8f0; margin-bottom: 1rem; font-size: 1.5rem; }
+.btn-launch { display: inline-block; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); color: #fff; font-size: 1.3rem; font-weight: 700; padding: 1.1rem 3rem; border-radius: 999px; text-decoration: none; box-shadow: 0 12px 40px rgba(99,102,241,.4); transition: transform .2s, box-shadow .2s; }
+.btn-launch:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 16px 50px rgba(99,102,241,.55); color: #fff; }
+.launch-note { margin-top: 1rem; color: #64748b; font-size: .9rem; }
 .feat-row { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; margin: 2rem 0; }
-.feat { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border: 1px solid #334155; border-radius: 999px; padding: .6rem 1.25rem; font-size: .95rem; color: #e2e8f0; box-shadow: 0 4px 12px rgba(0,0,0,.3); transition: transform .2s; }
-.feat:hover { transform: translateY(-2px); border-color: #6366f1; }
-.studio-frame { border: 1px solid #1e293b; border-radius: 20px; overflow: hidden; background: #0f172a; box-shadow: 0 24px 80px rgba(99,102,241,.15), 0 8px 32px rgba(0,0,0,.5); }
-.studio-frame iframe { width: 100%; height: 85vh; min-height: 640px; border: 0; display: block; background: #fff; }
-.studio-note { text-align: center; color: #64748b; font-size: .9rem; margin-top: 1.25rem; }
-.studio-note a { color: #a5b4fc; }
+.feat { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border: 1px solid #334155; border-radius: 999px; padding: .6rem 1.25rem; font-size: .95rem; color: #e2e8f0; box-shadow: 0 4px 12px rgba(0,0,0,.3); }
 .how-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 2rem 0; }
-.how-card { background: #0f172a; border: 1px solid #1e293b; border-radius: 16px; padding: 1.5rem; text-align: center; }
-.how-card .icon { font-size: 2rem; margin-bottom: .5rem; }
-.how-card h3 { font-size: 1.05rem; margin-bottom: .5rem; color: #e2e8f0; }
-.how-card p { font-size: .9rem; color: #94a3b8; }
+.how-card { background: #0f172a; border: 1px solid #1e293b; border-radius: 16px; padding: 1.75rem 1.5rem; text-align: center; transition: transform .2s, border-color .2s; }
+.how-card:hover { transform: translateY(-4px); border-color: #6366f1; }
+.how-card .icon { font-size: 2.5rem; margin-bottom: .75rem; }
+.how-card h3 { font-size: 1.1rem; margin-bottom: .5rem; color: #e2e8f0; }
+.how-card p { font-size: .92rem; color: #94a3b8; line-height: 1.5; }
 </style>
 </head>
 <body>
@@ -51,7 +52,7 @@
 <div class="studio-wrap">
   <div class="studio-hero">
     <h1>🎬 Free AI Video Studio</h1>
-    <p>Create stunning videos from text, animate your photos, add lifelike AI voiceover — all right here, 100% free. No sign-up, no credit card, no limits on creativity.</p>
+    <p>Create stunning videos from text, animate your photos, add lifelike AI voiceover — 100% free. No sign-up, no credit card, no limits on creativity.</p>
     <p class="founder">Crafted with ❤️ by <b>Muhammad Mudassir Yaseen</b> — Founder, EasyFix Agent</p>
   </div>
 
@@ -63,28 +64,29 @@
     <span class="feat">💯 100% Free</span>
   </div>
 
+  <div class="launch-box">
+    <h2>Ready to create? 🚀</h2>
+    <a class="btn-launch" href="https://free-ai-video-studio-c4mdwne7wccbeoeagz9zaz.streamlit.app/" target="_blank" rel="noopener">🎬 Launch Video Studio →</a>
+    <p class="launch-note">Opens in a new tab · Free forever · No sign-up needed</p>
+  </div>
+
   <div class="how-row">
     <div class="how-card">
       <div class="icon">✍️</div>
       <h3>1. Describe or Upload</h3>
-      <p>Type a prompt or upload a photo to animate</p>
+      <p>Type a text prompt or upload a photo you want to animate into video</p>
     </div>
     <div class="how-card">
       <div class="icon">⚡</div>
       <h3>2. AI Generates</h3>
-      <p>Our free AI engines create your video in seconds</p>
+      <p>Free AI engines (LTX-Video, CogVideoX, Wan) create your video clip</p>
     </div>
     <div class="how-card">
       <div class="icon">🎙️</div>
       <h3>3. Add Voiceover</h3>
-      <p>Pick from 18 natural AI voices, download & share</p>
+      <p>Pick from 18 natural AI voices, mux audio, download & share anywhere</p>
     </div>
   </div>
-
-  <div class="studio-frame">
-    <iframe src="https://free-ai-video-studio-c4mdwne7wccbeoeagz9zaz.streamlit.app/?embed=true" title="EasyFix Agent Video Studio" loading="lazy" allow="camera; microphone; clipboard-write"></iframe>
-  </div>
-  <p class="studio-note">Having trouble? <a href="https://free-ai-video-studio-c4mdwne7wccbeoeagz9zaz.streamlit.app/" target="_blank" rel="noopener">Open the studio in a new tab →</a></p>
 </div>
 
 <footer class="site"><div class="nav" style="justify-content:center;gap:1.5rem;flex-wrap:wrap;">
