@@ -35,7 +35,7 @@
 <body>
 <header class="site"><div class="nav">
 <a class="brand" href="/"><span class="logo-mark">⚡</span>EasyFix<span>Agent</span></a>
-<nav class="links"><a href="/">Home</a><a href="/blog.html">Blog</a><a href="/video-studio.html">🎬 Video Studio</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy-policy.html">Privacy</a></nav>
+<nav class="links"><a href="/">Home</a><a href="/blog.html">Blog</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy-policy.html">Privacy</a></nav>
 </div></header>
 
 <section class="hero">
@@ -46,6 +46,11 @@
 <a class="btn btn-primary" href="#guides">Explore Guides →</a>
 <a class="btn btn-ghost" href="/about.html">Why Trust Us</a>
 </div>
+<form class="hero-search" id="guideSearch" role="search">
+<input type="search" id="guideSearchInput" placeholder="Search guides — try “video”, “chatbot”, “students”…" aria-label="Search guides">
+<button type="submit">Search</button>
+</form>
+<div class="search-note" id="guideSearchNote"></div>
 <div class="stats">
 <div class="stat"><b>15+</b><span>In-depth Guides</span></div>
 <div class="stat"><b>100%</b><span>Free Tools Only</span></div>
@@ -58,6 +63,12 @@
 <div class="item"><span class="dot"></span>No sponsored rankings</div>
 <div class="item"><span class="dot"></span>Updated for 2026</div>
 <div class="item"><span class="dot"></span>Beginner friendly</div>
+</div></div>
+
+<div class="byline-wrap"><div class="byline">
+<img src="/assets/author.jpg" alt="Muhammad Mudassir Yaseen">
+<div class="who"><b>Written &amp; tested by Muhammad Mudassir Yaseen</b><span>Founder, EasyFix Agent — every guide on this site is tested by hand before it is published.</span></div>
+<div class="updated">🗓 Last updated: October 2026</div>
 </div></div>
 
 <main class="container">
@@ -236,5 +247,31 @@
 <div><h4>Legal</h4><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms of Use</a></div>
 </div><div class="copy">&copy; 2026 EasyFix Agent. All rights reserved. Made with care for the AI-curious.</div></footer>
 <script src="/assets/chatbot.js"></script>
+<script>
+(function () {
+  var form = document.getElementById('guideSearch');
+  if (!form) return;
+  var input = document.getElementById('guideSearchInput');
+  var note = document.getElementById('guideSearchNote');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('#guides .card'));
+  function apply() {
+    var q = input.value.trim().toLowerCase();
+    var shown = 0;
+    cards.forEach(function (c) {
+      var hit = !q || c.textContent.toLowerCase().indexOf(q) !== -1;
+      c.style.display = hit ? '' : 'none';
+      if (hit) shown++;
+    });
+    note.textContent = q ? (shown ? shown + (shown === 1 ? ' guide matches' : ' guides match') + ' “' + input.value.trim() + '”' : 'No guides match “' + input.value.trim() + '” — try a different word.') : '';
+    return shown;
+  }
+  input.addEventListener('input', apply);
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    apply();
+    document.getElementById('guides').scrollIntoView({ behavior: 'smooth' });
+  });
+})();
+</script>
 </body>
 </html>
