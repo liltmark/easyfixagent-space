@@ -10,6 +10,8 @@
   var WAN_NEG = "色调艳丽, 过曝, 静态, 细节模糊不清, 字幕, 风格, 作品, 画作, 画面, 静止, 整体发灰, 最差质量, 低质量, JPEG压缩残留, 丑陋的, 残缺的, 多余的手指, 画得不好的手部, 画得不好的脸部, 畸形的, 毁容的, 形态畸形的肢体, 手指融合, 静止不动的画面, 杂乱的背景, 三条腿, 背景人很多, 倒着走";
 
   function $(id) { return document.getElementById(id); }
+  function hfToken() { var el = $("hfToken"); return el ? el.value.trim() : ""; }
+  function authHeaders(h) { var t = hfToken(); if (t) h["Authorization"] = "Bearer " + t; return h; }
   function sessionHash() {
     var s = "";
     for (var i = 0; i < 16; i++) s += Math.floor(Math.random() * 16).toString(16);
@@ -32,7 +34,7 @@
     onStatus("Sending your request to the free AI engine…");
     return fetch(host + "/gradio_api/queue/join", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: authHeaders({ "Content-Type": "application/json" }),
       body: JSON.stringify({ data: data, fn_index: fnIndex, session_hash: sh })
     }).then(function (r) {
       if (!r.ok) throw new Error("Engine did not accept the request (HTTP " + r.status + ")");
@@ -44,7 +46,7 @@
   }
 
   function consumeStream(host, sh, onStatus) {
-    return fetch(host + "/gradio_api/queue/data?session_hash=" + sh).then(function (res) {
+    return fetch(host + "/gradio_api/queue/data?session_hash=" + sh, { headers: authHeaders({}) }).then(function (res) {
       var reader = res.body.getReader();
       var decoder = new TextDecoder();
       var buffer = "";
@@ -83,7 +85,7 @@
   function uploadFile(host, fileOrBlob, name) {
     var fd = new FormData();
     fd.append("files", fileOrBlob, name || "image.png");
-    return fetch(host + "/gradio_api/upload", { method: "POST", body: fd })
+    return fetch(host + "/gradio_api/upload", { method: "POST", body: fd, headers: authHeaders({}) })
       .then(function (r) {
         if (!r.ok) throw new Error("Upload failed (HTTP " + r.status + ")");
         return r.json();
@@ -259,5 +261,18 @@
       switchTab("t2v");
       $("t2vPrompt").focus();
     });
+  }
+  /* ---------- Hugging Face token (visitor's own, browser-only) ---------- */
+  var tokEl = $("hfToken");
+  if (tokEl) {
+    try { tokEl.value = localStorage.getItem("efa_hf_token") || ""; } catch (e) {}
+    var updTok = function () {
+      try { localStorage.setItem("efa_hf_token", tokEl.value.trim()); } catch (e) {}
+      var st = $("tokenState");
+      if (st) st.textContent = tokEl.value.trim() ? "✓ Token saved in this browser — your own allowance will be used." : "";
+    };
+    tokEl.addEventListener("change", updTok);
+    tokEl.addEventListener("input", updTok);
+    updTok();
   }
 })();
