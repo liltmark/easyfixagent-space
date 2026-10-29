@@ -35,6 +35,9 @@
 .checkline input { width:17px; height:17px; }
 .free-note { background:rgba(240,179,94,.10); border:1px solid rgba(240,179,94,.35); color:#f5cf9a; border-radius:12px; padding:13px 16px; font-size:.92rem; margin-top:18px; }
 .preview-img { display:none; max-width:100%; border-radius:12px; margin-top:12px; }
+.access-box { background:rgba(79,143,247,.08); border:1px solid rgba(96,165,250,.32); border-radius:12px; padding:16px 18px; margin-bottom:20px; font-size:.94rem; }
+.access-box input { width:100%; padding:12px 14px; border-radius:10px; border:1.5px solid var(--line); background:#0d1526; color:var(--ink); font:inherit; margin-top:10px; }
+.access-links { margin-top:10px; font-size:.88rem; color:var(--muted); }
 </style>
 </head>
 <body>
@@ -51,6 +54,11 @@
 </div>
 
 <div class="studio-box">
+<div class="access-box">
+<p><strong>🔑 Engine access:</strong> the free engines limit anonymous use — at busy times they pause for a while, then open again. For your own private allowance that nobody else shares, paste your free Hugging Face token here. It stays in <strong>your browser only</strong> — this site has no server and never receives it.</p>
+<input type="password" id="hfToken" placeholder="Paste your Hugging Face token (hf_…)" autocomplete="off">
+<p class="access-links">No account yet? <a href="https://huggingface.co/join" target="_blank" rel="noopener">Create a free Hugging Face account</a> · then <a href="https://huggingface.co/settings/tokens" target="_blank" rel="noopener">create your free token</a> (Read type is enough). <span id="tokenState"></span></p>
+</div>
 <div class="studio-tabs">
 <button id="tabT2v" class="active" type="button">✍️ Text to Video</button>
 <button id="tabI2v" type="button">🖼️ Image to Video</button>
@@ -107,7 +115,7 @@
 </div>
 </div>
 
-<p class="free-note">💡 <strong>Honest note:</strong> this studio is 100% free because it runs on free public AI engines (LTX-Video, Wan 2.2 and FLUX). Free engines have daily limits and queues — if one says its free allowance is used up, that is the engine's limit, not a fault with this site. Wait a little and try again, or try the other tab.</p>
+<p class="free-note">💡 <strong>Honest note:</strong> this studio is 100% free because it runs on free public AI engines (LTX-Video, Wan 2.2 and FLUX). Free engines have daily limits and queues — at busy times they pause anonymous generation for a while, then open again. If that happens, wait a little and try again, try the other tab, or add your free token above to use your own private allowance.</p>
 </div>
 
 <div class="section">
