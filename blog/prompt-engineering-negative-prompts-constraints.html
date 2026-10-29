@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2458760607892756" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Negative Prompts and Constraints: Telling AI What Not to Do | EasyFix Agent</title>
+<meta name="description" content="Learn how negative prompts and clear constraints stop AI wandering off brief: what to exclude, how to set limits, and how to test them.">
+<link rel="canonical" href="https://easyfixagent.space/blog/prompt-engineering-negative-prompts-constraints.html">
+<meta property="og:title" content="Negative Prompts and Constraints: Telling AI What Not to Do | EasyFix Agent">
+<meta property="og:description" content="Learn how negative prompts and clear constraints stop AI wandering off brief: what to exclude, how to set limits, and how to test them.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://easyfixagent.space/blog/prompt-engineering-negative-prompts-constraints.html">
+<meta property="og:image" content="https://easyfixagent.space/assets/pins/ai-tools.jpg">
+<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="/assets/chatbot.css">
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "f458d52c-c2a9-46e3-b182-e4acc931bdf4",
+    });
+  });
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Negative Prompts and Constraints: Telling AI What Not to Do", "description": "Learn how negative prompts and clear constraints stop AI wandering off brief: what to exclude, how to set limits, and how to test them.", "author": {"@type": "Organization", "name": "EasyFix Agent"}, "publisher": {"@type": "Organization", "name": "EasyFix Agent"}, "datePublished": "2026-10-29", "mainEntityOfPage": "https://easyfixagent.space/blog/prompt-engineering-negative-prompts-constraints.html"}</script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FKSEJYY6MJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FKSEJYY6MJ');
+</script>
+</head>
+<body>
+<header class="site"><div class="nav">
+<a class="brand" href="/">EasyFix<span>Agent</span></a>
+<nav class="links"><a href="/">Home</a><a href="/blog.html">Blog</a><a href="/video-studio.html">🎬 Video Studio</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy-policy.html">Privacy</a></nav>
+</div></header>
+<main class="narrow article">
+<h1>Negative Prompts and Constraints: Telling AI What Not to Do</h1>
+<img src="https://easyfixagent.space/assets/pins/ai-tools.jpg" alt="Negative Prompts and Constraints: Telling AI What Not to Do" style="width:100%;max-width:800px;height:auto;border-radius:12px;margin:20px 0;">
+<div class="meta">October 29, 2026 &middot; AI Tools &middot; 6 min read</div>
+<p class="lead">Most prompt advice focuses on what to ask for, but half of a good prompt is what you rule out. Without boundaries, an AI will happily add extra sections, invent details, switch tone halfway through, or answer a question you never asked. Negative prompts and clear constraints fix that. They tell the model where the edges are, so the useful part of the answer has room to land.</p>
+<h2>1. Why "don't" matters as much as "do"</h2>
+<p>An AI model does not know your standards unless you state them. If you ask for a product description, it may add hype, superlatives and claims you cannot back up, simply because that is what product descriptions often look like. A short list of exclusions changes the result completely: no invented statistics, no competitor names, no exclamation marks, no promises about results. If you are new to shaping prompts this way, our <a href="/blog/prompt-engineering-basics.html">prompt engineering basics</a> guide covers the foundations, and exclusions are the natural next step once the basics feel comfortable.</p>
+<h2>2. Be specific about what to exclude</h2>
+<p>Vague bans do not work well. "Don't be boring" means nothing to a model, because it has no clear picture of boring. "Don't use jargon, don't open with a question, and don't add a summary at the end" gives it something concrete to follow. Name the exact things that keep spoiling your outputs: the phrases it overuses, the format it defaults to, the extra sections it keeps adding. The more specific the exclusion, the less editing you will have to do afterwards, and the faster the whole workflow becomes.</p>
+<h2>3. Set format and length constraints</h2>
+<p>Format constraints are the easiest wins in prompting. State the length in plain terms, such as "about 200 words" or "no more than five bullet points", and name the structure you want: a heading, three short paragraphs, then a single closing line. Length limits also force the model to prioritise instead of covering everything thinly. If it still runs long, tighten the constraint rather than repeating the whole request. One firm limit usually beats three soft suggestions, because the model weighs the clearest instruction most heavily.</p>
+<h2>4. Constrain tone, audience and jargon</h2>
+<p>Tone drift is one of the most common reasons an answer feels wrong. A request that starts professionally can slide into casual slang, or a friendly draft can turn stiff and corporate. Fix the audience in one sentence: who is reading this, and what do they already know? Then set the tone to match, for example "plain, friendly language for a first-time homeowner" rather than "professional tone". Add a jargon rule too, such as "explain any technical term the first time you use it", and the output will read like it was written for a real person.</p>
+<h2>5. Rule out invented facts and sources</h2>
+<p>The most important constraint of all concerns facts. Tell the model what to do when it does not know something: say so, leave the point out, or mark it clearly for you to check. A line like "only use facts I provided; do not invent dates, prices or quotations" prevents the confident-sounding errors that cause real trouble. This matters even more when the output will be published or sent to a customer. Our <a href="/blog/prompt-engineering-advanced-patterns.html">advanced prompting patterns</a> guide goes further into techniques for grounding answers in material you supply, which pairs well with strict fact constraints.</p>
+<h2>6. Test the constraint, then tighten it</h2>
+<p>Constraints rarely work perfectly on the first try, and that is normal. Run the same prompt twice and compare: did the banned phrase disappear, did the length hold, did the tone stay steady? If one exclusion keeps being ignored, rephrase it as a positive instruction instead. "Write in short sentences" often works better than "don't write long sentences", because the model has a clearer pattern to follow. <a href="/blog/prompt-engineering-consistent-results.html">Getting consistent results</a> is largely this habit: testing small changes, keeping what works, and building prompts that behave the same way every time.</p>
+<h2>7. Keep a small library of reusable constraints</h2>
+<p>Once you find constraints that work, save them as a short block you can paste into any prompt. A good starter set covers facts, tone, length and format in about four lines, and you can adjust one line per task instead of rewriting everything. Over time this becomes your personal house style for AI work, and your outputs start to look consistent without extra effort. Pair it with a solid <a href="/blog/ai-writing-tools-editing-workflow.html">editing workflow</a> for the final pass, because even the best-constrained draft deserves a human read before it goes anywhere.</p>
+<blockquote><strong>Bottom line:</strong> Tell the AI what to leave out, set firm limits on length, tone and facts, and test the result twice — good constraints turn rough drafts into usable work.</blockquote>
+</main>
+<footer class="site"><div class="cols">
+<div><h4>EasyFix Agent</h4><p>Practical guides and honest reviews of free AI tools. We test everything ourselves and only recommend what actually works.</p></div>
+<div><h4>Explore</h4><a href="/">Home</a><a href="/video-studio.html">🎬 Video Studio</a><a href="/about.html">About Us</a><a href="/contact.html">Contact</a></div>
+<div><h4>Legal</h4><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms of Use</a></div>
+</div><div class="copy">&copy; 2026 EasyFix Agent. All rights reserved.</div></footer>
+<script src="/assets/chatbot.js"></script>
+</body>
+</html>
