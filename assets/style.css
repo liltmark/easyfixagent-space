@@ -426,3 +426,5 @@ h1, h2, .p5-step h3, .p5-feature-card h3 { font-family:"Sora","Inter",system-ui,
 .p5-step p { color:var(--body); line-height:1.65; font-size:.96rem; margin:0; }
 .newsletter { border:1px solid transparent; background:linear-gradient(#0d1526,#0d1526) padding-box,linear-gradient(120deg,rgba(125,177,255,.5),rgba(34,184,207,.2),rgba(124,92,246,.35)) border-box; }
 @media (max-width:920px){ .p5-hero-inner{grid-template-columns:1fr; gap:38px;} .p5-hero{padding:60px 18px 48px;} .p5-mini-card{max-width:100%; align-self:stretch;} .p5-steps{grid-template-columns:1fr;} }
+.p5-hero .stats .stat { display:flex; align-items:baseline; gap:9px; }
+.p5-hero .stats .stat b { font-family:"Sora",sans-serif; }
