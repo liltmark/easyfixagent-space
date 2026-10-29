@@ -157,7 +157,7 @@
     var status = $("t2vStatus"), out = $("t2vResult"), btn = $("t2vBtn");
     if (!prompt) { status.textContent = "Please describe your video first — plain words are fine."; out.style.display = "block"; return; }
     var aspect = $("t2vAspect").value, dur = parseInt($("t2vDur").value, 10);
-    var wh = aspect === "portrait" ? [352, 640] : [640, 352];
+    var wh = aspect === "portrait" ? [432, 768] : [768, 432];
     var frames = dur === 5 ? 121 : dur === 3 ? 73 : 49;
     var data = [boost(prompt), "blurry, low quality, distorted, static, watermark, text",
       null, null, wh[1], wh[0], "text-to-video", dur, frames, 0, true, 3.0, false];
@@ -224,7 +224,7 @@
     setS("Uploading your image to the video engine…");
     uploadFile(WAN, chosenImage.blob, chosenImage.name || "image.png")
       .then(function (path) {
-        var data = [{ path: path }, boost(prompt), 6, WAN_NEG, 2, 1, 1, 42, true, null];
+        var data = [{ path: path }, boost(prompt), 8, WAN_NEG, 2, 1, 1, 42, true, null];
         return runQueue(WAN, 0, data, setS);
       })
       .then(function (resultData) {
