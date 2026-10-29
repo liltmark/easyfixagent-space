@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login / Sign Up | EasyFix Agent</title>
+<meta name="description" content="Sign in or create your free EasyFix Agent account.">
+<link rel="canonical" href="https://easyfixagent.space/login.html">
+<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="/assets/chatbot.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+.auth-wrap { max-width:460px; margin:0 auto; padding:56px 20px 70px; }
+.auth-card { background:linear-gradient(#0d1526,#0b1120) padding-box,linear-gradient(140deg,rgba(125,177,255,.5),rgba(34,184,207,.18),rgba(124,92,246,.35)) border-box; border:1px solid transparent; border-radius:20px; padding:34px 32px; box-shadow:0 30px 60px rgba(0,0,0,.5); }
+.auth-card h1 { font-size:1.7rem; margin:0 0 6px; }
+.auth-card .sub { color:var(--muted); margin:0 0 24px; font-size:.96rem; line-height:1.6; }
+.auth-tabs { display:flex; background:#0a0f1d; border:1px solid var(--line); border-radius:12px; padding:4px; margin-bottom:24px; }
+.auth-tab { flex:1; font:inherit; font-weight:700; font-size:.95rem; color:var(--muted); background:transparent; border:none; padding:10px; border-radius:9px; cursor:pointer; }
+.auth-tab.on { background:linear-gradient(135deg,#4f8ff7,#22b8cf); color:#fff; }
+.auth-card label { display:block; font-weight:600; font-size:.92rem; margin:16px 0 7px; }
+.auth-card input { width:100%; padding:13px 15px; border-radius:11px; border:1.5px solid var(--line); background:#0d1526; color:var(--ink); font:inherit; }
+.auth-card input:focus { outline:none; border-color:var(--accent); }
+.auth-submit { width:100%; margin-top:22px; padding:14px; font-size:1rem; }
+.auth-msg { margin-top:16px; font-size:.93rem; line-height:1.55; min-height:1.2em; }
+.auth-msg.err { color:#ff9d9d; } .auth-msg.ok { color:#8be0c8; }
+.auth-forgot { display:inline-block; margin-top:12px; font-size:.9rem; color:#7db1ff; }
+.auth-divider { display:flex; align-items:center; gap:14px; margin:24px 0 18px; color:var(--faint); font-size:.85rem; }
+.auth-divider::before,.auth-divider::after { content:""; flex:1; height:1px; background:var(--line); }
+.google-btn { width:100%; display:flex; align-items:center; justify-content:center; gap:10px; padding:13px; font:inherit; font-weight:700; font-size:.98rem; color:#1c2733; background:#fff; border:none; border-radius:11px; cursor:pointer; }
+.google-btn:hover { background:#eef2fa; }
+.auth-note { margin-top:22px; font-size:.86rem; color:var(--muted); line-height:1.6; text-align:center; }
+</style>
+</head>
+<body>
+<header class="site"><div class="nav">
+<a class="brand" href="/"><span class="logo-mark">⚡</span>EasyFix<span>Agent</span></a>
+<nav class="links"><a href="/">Home</a><a href="/blog.html">Blog</a><a href="/video-studio.html">🎬 Video Studio</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy-policy.html">Privacy</a><a href="/login.html" id="navAuth">Login</a></nav>
+</div></header>
+
+<main class="auth-wrap">
+<div class="auth-card">
+<h1>👤 Your Account</h1>
+<p class="sub">Sign in to your free EasyFix Agent account — or create one in under a minute. No card, ever.</p>
+<div class="auth-tabs">
+<button type="button" class="auth-tab on" data-tab="in">Sign In</button>
+<button type="button" class="auth-tab" data-tab="up">Sign Up</button>
+</div>
+
+<form id="signinForm">
+<label for="siEmail">Email</label>
+<input type="email" id="siEmail" required autocomplete="email" placeholder="you@example.com">
+<label for="siPass">Password</label>
+<input type="password" id="siPass" required autocomplete="current-password" placeholder="Your password">
+<button type="submit" class="btn btn-primary auth-submit">Sign In →</button>
+<a href="#" class="auth-forgot" id="forgotLink">Forgot password?</a>
+</form>
+
+<form id="signupForm" style="display:none">
+<label for="suName">Your name</label>
+<input type="text" id="suName" autocomplete="name" placeholder="e.g. Alex Carter">
+<label for="suEmail">Email</label>
+<input type="email" id="suEmail" required autocomplete="email" placeholder="you@example.com">
+<label for="suPass">Create a password</label>
+<input type="password" id="suPass" required autocomplete="new-password" placeholder="At least 6 characters">
+<button type="submit" class="btn btn-primary auth-submit">Create Free Account →</button>
+</form>
+
+<div class="auth-divider">or</div>
+<button type="button" class="google-btn" id="googleBtn"><span style="font-weight:800;color:#4285f4">G</span> Continue with Google</button>
+
+<div class="auth-msg" id="authMsg"></div>
+<p class="auth-note">🔒 Passwords are handled securely by Google Firebase — this website never sees or stores your password.</p>
+</div>
+</main>
+
+<footer class="site"><div class="cols">
+<div>
+<a class="brand" href="/"><span class="logo-mark">⚡</span>EasyFix<span>Agent</span></a>
+<p>Practical guides and honest reviews of free AI tools. We test everything ourselves and only recommend what actually works.</p>
+</div>
+<div><h4>Explore</h4><a href="/">Home</a><a href="/about.html">About Us</a><a href="/contact.html">Contact</a></div>
+<div><h4>Guides</h4><a href="/blog/best-free-ai-tools-2026.html">Best Free AI Tools</a><a href="/blog/ai-video-generators-free.html">AI Video Generators</a><a href="/blog/prompt-engineering-basics.html">Prompt Engineering</a></div>
+<div><h4>Legal</h4><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms of Use</a></div>
+</div><div class="copy">&copy; 2026 EasyFix Agent. All rights reserved. Made with care for the AI-curious.</div></footer>
+<script src="/assets/firebase-config.js"></script>
+<script type="module" src="/assets/auth.js"></script>
+</body>
+</html>
