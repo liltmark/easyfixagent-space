@@ -6,6 +6,7 @@
   "use strict";
   var LTX = "https://lightricks-ltx-video-distilled.hf.space";
   var WAN = "https://upsampler-wan-2-2-14b-image-to-video.hf.space";
+  var WANT2V = "https://upsampler-wan-2-2-14b-text-to-video.hf.space";
   var FLUX = "https://black-forest-labs-flux-1-schnell.hf.space";
   var WAN_NEG = "色调艳丽, 过曝, 静态, 细节模糊不清, 字幕, 风格, 作品, 画作, 画面, 静止, 整体发灰, 最差质量, 低质量, JPEG压缩残留, 丑陋的, 残缺的, 多余的手指, 画得不好的手部, 画得不好的脸部, 畸形的, 毁容的, 形态畸形的肢体, 手指融合, 静止不动的画面, 杂乱的背景, 三条腿, 背景人很多, 倒着走";
 
@@ -167,14 +168,26 @@
     $("t2vVideoWrap").innerHTML = "";
     setBusy(btn, status, true, "🎬 Generate Video");
     var stop = startTimer(status);
-    runQueue(LTX, 4, data, statusSetter(status)).then(function (resultData) {
+    function render(resultData, host) {
       stop();
-      var f = findFile(resultData, LTX, [".mp4", ".webm"]);
+      var f = findFile(resultData, host, [".mp4", ".webm"]);
       if (!f) throw new Error("The engine finished but returned no video file.");
       status.textContent = "✅ Done! Your video is ready — press play, or download it below.";
       $("t2vVideoWrap").innerHTML =
         '<video controls playsinline src="' + f.url + '" style="width:100%;border-radius:14px;background:#000;"></video>' +
         '<p style="margin-top:12px;"><a class="btn btn-primary" href="' + f.url + '" download target="_blank" rel="noopener">⬇ Download Video</a></p>';
+    }
+    runQueue(LTX, 4, data, statusSetter(status)).then(function (resultData) {
+      render(resultData, LTX);
+    }).catch(function () {
+      /* Backup engine: a second free pool (Wan 2.2 text-to-video) */
+      statusSetter(status)("Main engine is busy — switching to the backup engine…");
+      var wanData = [boost(prompt),
+        aspect === "portrait" ? "9:16 (480x832)" : "16:9 (832x480)",
+        4, NEG_CN, dur, 1, 1, 42, true];
+      return runQueue(WANT2V, 0, wanData, statusSetter(status)).then(function (resultData) {
+        render(resultData, WANT2V);
+      });
     }).catch(function (e) {
       stop();
       status.textContent = "⚠️ " + friendlyError(e.message);
