@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Account | EasyFix Agent</title>
+<meta name="description" content="Your EasyFix Agent account.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://easyfixagent.space/account.html">
+<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="/assets/chatbot.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+.acct-wrap { max-width:640px; margin:0 auto; padding:56px 20px 70px; }
+.acct-card { background:linear-gradient(#0d1526,#0b1120) padding-box,linear-gradient(140deg,rgba(125,177,255,.5),rgba(34,184,207,.18),rgba(124,92,246,.35)) border-box; border:1px solid transparent; border-radius:20px; padding:34px 32px; box-shadow:0 30px 60px rgba(0,0,0,.5); }
+.acct-card h1 { font-size:1.7rem; margin:0 0 4px; }
+.acct-meta { color:var(--muted); line-height:1.7; margin-bottom:8px; }
+.acct-meta b { color:var(--ink); }
+.acct-sec { border-top:1px solid var(--line); margin-top:24px; padding-top:22px; }
+.acct-sec h3 { margin:0 0 8px; font-size:1.08rem; }
+.acct-sec p { color:var(--body); font-size:.94rem; line-height:1.65; }
+.acct-sec input { width:100%; padding:12px 14px; border-radius:11px; border:1.5px solid var(--line); background:#0d1526; color:var(--ink); font:inherit; margin:8px 0 10px; }
+.acct-row { display:flex; gap:12px; flex-wrap:wrap; margin-top:26px; }
+.acct-note { font-size:.88rem; color:#8be0c8; min-height:1.2em; }
+</style>
+</head>
+<body>
+<header class="site"><div class="nav">
+<a class="brand" href="/"><span class="logo-mark">⚡</span>EasyFix<span>Agent</span></a>
+<nav class="links"><a href="/">Home</a><a href="/blog.html">Blog</a><a href="/video-studio.html">🎬 Video Studio</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy-policy.html">Privacy</a><a href="/account.html" id="navAuth">My Account</a></nav>
+</div></header>
+
+<main class="acct-wrap">
+<p id="acctLoading" style="color:var(--muted)">Loading your account…</p>
+<div class="acct-card" id="accountBox" style="display:none">
+<h1>👋 <span id="acctName">Member</span></h1>
+<p class="acct-meta">Email: <b id="acctEmail"></b><br>Member since: <b id="acctSince"></b></p>
+
+<div class="acct-sec">
+<h3>🎬 Your Video Studio access</h3>
+<p>Paste your free Hugging Face token once here and the Video Studio on this device will use your own private engine allowance automatically. The token is stored <strong>only in this browser</strong> — it is never sent to us. <a href="https://huggingface.co/join" target="_blank" rel="noopener">Create a free account</a> · <a href="https://huggingface.co/settings/tokens" target="_blank" rel="noopener">Get your token</a></p>
+<input type="password" id="acctToken" placeholder="hf_…" autocomplete="off">
+<button type="button" class="btn btn-ghost" id="acctTokenSave">Save token on this device</button>
+<p class="acct-note" id="acctTokenNote"></p>
+</div>
+
+<div class="acct-row">
+<a class="btn btn-primary" href="/video-studio.html">Open Video Studio →</a>
+<a class="btn btn-ghost" href="/blog.html">Browse Guides</a>
+<button type="button" class="btn btn-ghost" id="signOutBtn">Sign Out</button>
+</div>
+</div>
+</main>
+
+<footer class="site"><div class="cols">
+<div>
+<a class="brand" href="/"><span class="logo-mark">⚡</span>EasyFix<span>Agent</span></a>
+<p>Practical guides and honest reviews of free AI tools. We test everything ourselves and only recommend what actually works.</p>
+</div>
+<div><h4>Explore</h4><a href="/">Home</a><a href="/about.html">About Us</a><a href="/contact.html">Contact</a></div>
+<div><h4>Guides</h4><a href="/blog/best-free-ai-tools-2026.html">Best Free AI Tools</a><a href="/blog/ai-video-generators-free.html">AI Video Generators</a><a href="/blog/prompt-engineering-basics.html">Prompt Engineering</a></div>
+<div><h4>Legal</h4><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms of Use</a></div>
+</div><div class="copy">&copy; 2026 EasyFix Agent. All rights reserved. Made with care for the AI-curious.</div></footer>
+<script src="/assets/firebase-config.js"></script>
+<script type="module" src="/assets/auth.js"></script>
+</body>
+</html>
