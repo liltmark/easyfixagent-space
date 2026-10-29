@@ -54,3 +54,14 @@
 }
 
 /* build nudge 2026-10-29 */
+
+/* Dark premium overrides (v4.3) */
+.ef-chat-panel { background: #101828; border-color: rgba(148,178,226,.18); box-shadow: 0 24px 60px rgba(0,0,0,.6); }
+.ef-chat-msgs { background: #0b1120; }
+.ef-msg.bot { background: #16203a; border-color: rgba(148,178,226,.16); color: #dbe4f5; }
+.ef-msg a { color: #7db1ff; }
+.ef-chips { background: #0b1120; }
+.ef-chip { background: rgba(79,143,247,.13); border-color: rgba(96,165,250,.35); color: #9db9e8; }
+.ef-chip:hover { background: rgba(79,143,247,.25); }
+.ef-chat-input { background: #101828; border-top-color: rgba(148,178,226,.16); }
+.ef-chat-input input { background: #0d1526; color: #eef2fa; border-color: rgba(148,178,226,.2); }
