@@ -14,6 +14,8 @@
 <meta property="og:url" content="https://easyfixagent.space/">
 <link rel="stylesheet" href="/assets/style.css">
 <link rel="stylesheet" href="/assets/chatbot.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
 <script>
   window.OneSignalDeferred = window.OneSignalDeferred || [];
@@ -38,16 +40,18 @@
 <nav class="links"><a href="/">Home</a><a href="/blog.html">Blog</a><a href="/video-studio.html">🎬 Video Studio</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy-policy.html">Privacy</a></nav>
 </div></header>
 
-<section class="hero">
+<section class="p5-hero">
+<div class="p5-hero-inner">
+<div class="p5-hero-copy">
 <div class="eyebrow">✦ 100% Free · No Sign-up Walls · Tested by Hand</div>
-<h1>Free AI Tools, <span class="grad">Honest Reviews</span> & Practical Tips</h1>
-<p>Practical guides and hands-on tips for free AI tools — tested by real people, written in plain English. No sponsored placements, no fluff.</p>
+<h1>Free AI tools, <span class="grad">honestly tested</span> for real people.</h1>
+<p class="p5-lede">Practical guides and hands-on tips for free AI tools — tested by real people, written in plain English. No sponsored placements, no fluff.</p>
 <div class="cta-row">
 <a class="btn btn-primary" href="#guides">Explore Guides →</a>
 <a class="btn btn-ghost" href="/about.html">Why Trust Us</a>
 </div>
-<form class="hero-search" id="guideSearch" role="search">
-<input type="search" id="guideSearchInput" placeholder="Search guides — try “video”, “chatbot”, “students”…" aria-label="Search guides">
+<form class="hero-search p5-search" id="guideSearch" role="search">
+<input type="search" id="guideSearchInput" placeholder="Search guides — try \u201cvideo\u201d, \u201cchatbot\u201d, \u201cstudents\u201d\u2026" aria-label="Search guides">
 <button type="submit">Search</button>
 </form>
 <div class="search-note" id="guideSearchNote"></div>
@@ -55,6 +59,18 @@
 <div class="stat"><b>15+</b><span>In-depth Guides</span></div>
 <div class="stat"><b>100%</b><span>Free Tools Only</span></div>
 <div class="stat"><b>0</b><span>Sponsored Posts</span></div>
+</div>
+</div>
+<div class="p5-hero-visual">
+<a class="p5-feature-card" href="/video-studio.html">
+<img src="/assets/img/ai-video-generators-free.jpg" alt="Our free AI Video Studio">
+<div class="p5-fc-body"><span class="p5-badge">NEW · FREE STUDIO</span><h3>Make AI videos right in your browser</h3><p>Our own built-in studio — type an idea, get a video. No installs, no sign-up wall.</p><span class="p5-fc-link">Open the Studio \u2192</span></div>
+</a>
+<a class="p5-mini-card" href="/blog/chatgpt-tips-beginners.html">
+<img src="/assets/img/chatgpt-tips-beginners.jpg" alt="ChatGPT Tips for Beginners">
+<div><b>ChatGPT Tips for Beginners</b><span>9 tricks that actually work · 6 min read</span></div>
+</a>
+</div>
 </div>
 </section>
 
@@ -72,6 +88,19 @@
 </div></div>
 
 <main class="container">
+<div class="p5-pills" id="catPills">
+<button type="button" data-q="" class="on">All guides</button>
+<button type="button" data-q="video">🎬 Video</button>
+<button type="button" data-q="image">🖼 Images</button>
+<button type="button" data-q="writing">✍️ Writing</button>
+<button type="button" data-q="music">🎵 Music</button>
+<button type="button" data-q="voice">🎙 Voice</button>
+<button type="button" data-q="coding">💻 Coding</button>
+<button type="button" data-q="productivity">⚡ Productivity</button>
+<button type="button" data-q="student">🎓 Students</button>
+<button type="button" data-q="business">💼 Business</button>
+<button type="button" data-q="chatbot">🤖 Chatbots</button>
+</div>
 <div class="section" id="guides">
 <h2>Latest Guides</h2><p class="sub">Tested by hand. No sponsored placements, no fluff.</p>
 <div class="grid">
@@ -215,6 +244,15 @@
 </div>
 </div>
 
+<div class="section p5-how">
+<h2>How EasyFix Agent Works</h2><p class="sub">Three steps between you and tools that actually save you time.</p>
+<div class="p5-steps">
+<div class="p5-step"><span class="p5-num">01</span><h3>Pick a guide</h3><p>Every guide is tested by hand and written in plain English — start from zero, finish with a working tool.</p></div>
+<div class="p5-step"><span class="p5-num">02</span><h3>Try it free</h3><p>We only cover tools with a real free tier. No credit-card traps, no trial walls dressed up as free.</p></div>
+<div class="p5-step"><span class="p5-num">03</span><h3>Create something real</h3><p>Videos, images, writing, music — or open our free in-browser AI Video Studio and make it right here.</p></div>
+</div>
+</div>
+
 <div class="section">
 <h2>Why EasyFix Agent?</h2><p class="sub">We do the testing so you don't waste time.</p>
 <div class="features">
@@ -269,6 +307,21 @@
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     apply();
+    document.getElementById('guides').scrollIntoView({ behavior: 'smooth' });
+  });
+})();
+</script>
+<script>
+(function () {
+  var pills = document.getElementById('catPills');
+  var input = document.getElementById('guideSearchInput');
+  if (!pills || !input) return;
+  pills.addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (!b) return;
+    pills.querySelectorAll('button').forEach(function (x) { x.classList.remove('on'); });
+    b.classList.add('on');
+    input.value = b.getAttribute('data-q') || '';
+    input.dispatchEvent(new Event('input', { bubbles: true }));
     document.getElementById('guides').scrollIntoView({ behavior: 'smooth' });
   });
 })();
