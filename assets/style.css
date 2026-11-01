@@ -428,3 +428,8 @@ h1, h2, .p5-step h3, .p5-feature-card h3 { font-family:"Sora","Inter",system-ui,
 @media (max-width:920px){ .p5-hero-inner{grid-template-columns:1fr; gap:38px;} .p5-hero{padding:60px 18px 48px;} .p5-mini-card{max-width:100%; align-self:stretch;} .p5-steps{grid-template-columns:1fr;} }
 .p5-hero .stats .stat { display:flex; align-items:baseline; gap:9px; }
 .p5-hero .stats .stat b { font-family:"Sora",sans-serif; }
+
+/* 2026-11-01: blog index cards use <h2> (heading-hierarchy fix) — same look as .card h3 */
+.card h2 { font-size: 19.5px; line-height: 1.4; margin-bottom: 10px; font-weight: 700; }
+.card h2 a { color: var(--ink); }
+.card h2 a:hover { color: var(--accent); text-decoration: none; }
