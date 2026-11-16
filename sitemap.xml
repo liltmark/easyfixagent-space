@@ -35,6 +35,12 @@
 <url><loc>https://easyfixagent.space/blog/ai-photo-editors-upscaling-guide.html</loc><lastmod>2026-11-01</lastmod><priority>0.8</priority></url>
 <url><loc>https://easyfixagent.space/blog/ai-productivity-tools-email-meeting-workflow.html</loc><lastmod>2026-11-01</lastmod><priority>0.8</priority></url>
 <url><loc>https://easyfixagent.space/blog/ai-productivity-tools-meeting-notes-action-items.html</loc><lastmod>2026-11-01</lastmod><priority>0.8</priority></url>
+  <url>
+    <loc>https://easyfixagent.space/blog/ai-productivity-tools-meeting-recordings-searchable-knowledge-base.html</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 <url><loc>https://easyfixagent.space/blog/ai-productivity-tools-plan-your-day.html</loc><lastmod>2026-11-01</lastmod><priority>0.8</priority></url>
 <url><loc>https://easyfixagent.space/blog/ai-productivity-tools-task-prioritisation.html</loc><lastmod>2026-11-01</lastmod><priority>0.8</priority></url>
 <url><loc>https://easyfixagent.space/blog/ai-productivity-tools-time-blocking-calendar-planning.html</loc><lastmod>2026-11-01</lastmod><priority>0.8</priority></url>
@@ -121,6 +127,12 @@
 <url><loc>https://easyfixagent.space/blog/ai-photo-editors-quick-phone-photo-fixes.html</loc><lastmod>2026-11-01</lastmod><priority>0.8</priority></url>
 <url><loc>https://easyfixagent.space/blog/ai-coding-assistants-test-ai-generated-code-checklist.html</loc><lastmod>2026-11-01</lastmod><priority>0.8</priority></url>
 <url><loc>https://easyfixagent.space/blog/ai-productivity-tools-automate-repetitive-tasks-beginner.html</loc><lastmod>2026-11-01</lastmod><priority>0.8</priority></url>
+  <url>
+    <loc>https://easyfixagent.space/blog/prompt-engineering-explain-hard-topics-plain-words.html</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 <url><loc>https://easyfixagent.space/blog/prompt-engineering-few-shot-prompting-examples.html</loc><lastmod>2026-11-01</lastmod><priority>0.8</priority></url>
 <url><loc>https://easyfixagent.space/blog/ai-tools-small-business-inventory-stock-planning.html</loc><lastmod>2026-11-01</lastmod><priority>0.8</priority></url>
 <url><loc>https://easyfixagent.space/blog/ai-tools-students-group-projects-divide-work.html</loc><lastmod>2026-11-01</lastmod><priority>0.8</priority></url>
@@ -302,13 +314,25 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
+    <url>
+    <loc>https://easyfixagent.space/blog/ai-tools-small-business-tax-time-organise-records.html</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+<url>
     <loc>https://easyfixagent.space/blog/ai-tools-small-business-website-copy-homepages.html</loc>
     <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
+    <url>
+    <loc>https://easyfixagent.space/blog/ai-tools-students-practise-presentations-interviews-rehearsal.html</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+<url>
     <loc>https://easyfixagent.space/blog/ai-tools-students-reading-comprehension-summaries.html</loc>
     <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
