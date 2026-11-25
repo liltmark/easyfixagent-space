@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WXWTM24H');</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2458760607892756" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Code Review Checklists: What to Check Before You Merge | EasyFix Agent</title>
+<meta name="description" content="An AI code review checklist keeps AI written code safe to merge. Check logic, imports, edge cases and security before any change joins the main branch.">
+<link rel="canonical" href="https://easyfixagent.space/blog/ai-code-review-checklist-before-you-merge.html">
+<meta property="og:title" content="AI Code Review Checklists: What to Check Before You Merge | EasyFix Agent">
+<meta property="og:description" content="An AI code review checklist keeps AI written code safe to merge. Check logic, imports, edge cases and security before any change joins the main branch.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://easyfixagent.space/blog/ai-code-review-checklist-before-you-merge.html">
+<meta property="og:image" content="https://easyfixagent.space/assets/pins/chatgpt.jpg">
+<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="/assets/chatbot.css">
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "f458d52c-c2a9-46e3-b182-e4acc931bdf4",
+    });
+  });
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AI Code Review Checklists: What to Check Before You Merge",
+  "description": "An AI code review checklist keeps AI written code safe to merge. Check logic, imports, edge cases and security before any change joins the main branch.",
+  "author": {"@type": "Person", "@id": "https://easyfixagent.space/author.html#author", "name": "Muhammad Mudassir Yaseen", "url": "https://easyfixagent.space/author.html"},
+  "publisher": {"@type": "Organization", "name": "EasyFix Agent"},
+  "datePublished": "2026-11-25",
+  "mainEntityOfPage": "https://easyfixagent.space/blog/ai-code-review-checklist-before-you-merge.html"
+}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FKSEJYY6MJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FKSEJYY6MJ');
+</script>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WXWTM24H" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<header class="site"><div class="nav">
+<a class="brand" href="/">EasyFixAgent</a>
+<nav class="links"><a href="/">Home</a><a href="/blog.html">Blog</a><a href="/video-studio.html">Video Studio</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy-policy.html">Privacy</a></nav>
+</div></header>
+<main class="narrow article">
+<h1>AI Code Review Checklists: What to Check Before You Merge</h1>
+<img src="https://easyfixagent.space/assets/pins/chatgpt.jpg" alt="A developer reviewing lines of code on a monitor, working through an AI code review checklist before merging a change" style="width:100%;max-width:800px;height:auto;border-radius:12px;margin:20px 0;">
+<div class="meta">November 25, 2026 &middot; AI Coding Assistants &middot; 5 min read</div>
+<div class="byline-wrap"><div class="byline">
+<img src="/assets/author.jpg" alt="Muhammad Mudassir Yaseen">
+<div class="who"><b>Written &amp; tested by <a href="/author.html">Muhammad Mudassir Yaseen</a></b><span>Founder, EasyFix Agent, every guide on this site is tested by hand before it is published.</span></div>
+<div class="updated">🗓 Last updated: November 2026</div>
+</div></div>
+
+<p class="lead">An AI coding assistant can write a working function in seconds, and that speed creates a new problem. Code that looks finished still needs a careful review before it joins the main branch, because AI tools make confident mistakes. They invent library calls, skip edge cases, and copy patterns that do not fit your project. An AI code review checklist turns that review into a habit. It gives you a fixed set of checks to run on every AI generated change, so nothing merges on trust alone.</p>
+<h2>1. 1. Read the code before you run it</h2>
+<p>The first check is the simplest and the easiest to skip. Read every line the AI wrote, slowly, before you run it. AI generated code often looks clean at a glance, with neat formatting and sensible names, while hiding a wrong condition or a flipped comparison. Reading forces you to understand what the code does, and understanding is the only real defence against a subtle bug.</p>
+<p>Pay special attention to the parts you did not ask for. AI assistants often add extra handling, extra imports, or extra functions that seem helpful but change behaviour you did not intend. If a line does not serve the task you described, remove it or ask why it is there. A short diff that you fully understand beats a long diff that merely looks impressive.</p>
+<h2>2. 2. Check every library call and import</h2>
+<p>AI tools sometimes invent functions that do not exist. They recall a library name from training and guess at a method that sounds right, and the result compiles in your head while failing in reality. Check every import against the installed version of the library, and confirm that each method exists with the exact name and arguments used in the code.</p>
+<p>Also check the version. A call that works in the newest release may not exist in the version your project pins, and a call from an old tutorial may be removed already. Run the code, read the error messages, and verify the docs for anything unfamiliar. Our guide to <a href="/blog/ai-coding-assistants-test-ai-generated-code-checklist.html">testing AI generated code</a> shows a quick routine for catching invented calls before they reach review.</p>
+<h2>3. 3. Hunt for the edge cases the AI skipped</h2>
+<p>AI assistants write code for the happy path first. They handle the normal input, the expected shape, and the usual flow, then stop. Real users send empty strings, missing fields, huge files, and dates in the wrong format. Your checklist should ask, for every input the code touches, what happens when that input is empty, too large, or simply wrong.</p>
+<p>Write a quick test for each edge case you find, even a rough one. A null check you add today prevents a crash report next week, and a test you write now documents the behaviour for the next person. If the AI code has no handling for an obvious edge case, send it back with a clear note about what is missing. Our guide to <a href="/blog/ai-coding-assistants-secure-code-review.html">secure code review with AI</a> covers the security side of the same habit.</p>
+<h2>4. 4. Review security the way a stranger would</h2>
+<p>Read AI generated code as if a stranger wrote it for your production system, because in a sense one did. Look for user input that reaches a database query, a shell command, or a file path without cleaning. Look for secrets, tokens, or passwords written into the code itself. Look for error messages that leak internal details to the outside world.</p>
+<p>AI tools learn from public code, and public code contains bad security habits. A snippet that looks standard may carry a known weakness, such as string building for queries or a weak random source for tokens. Run your normal security checks on AI code exactly as you would on human code, with no discount for speed. If your team uses a scanner, run it on every AI assisted change without exception.</p>
+<h2>5. 5. Check that the code fits your project, not just the task</h2>
+<p>Code can be correct in isolation and still wrong for your codebase. AI assistants do not know your naming rules, your folder layout, or the patterns your team agreed on. They may introduce a second way of doing something your project already does one way, or use a library your project deliberately avoids. That kind of drift adds cost long after the merge.</p>
+<p>Compare the new code with a similar file already in the project. Does it follow the same structure, the same error handling, and the same style? If not, reshape it before you merge, even when the logic is fine. Our guide to <a href="/blog/ai-coding-assistants-refactor-messy-code-safely.html">refactoring messy code safely</a> shows how to reshape AI output without breaking what already works. For solo developers, our guide to <a href="/blog/ai-coding-assistants-code-review-solo-developers.html">code review for solo developers</a> adapts this checklist to a one person workflow.</p>
+<h2>6. 6. Keep the checklist short enough to use every time</h2>
+<p>A checklist with forty items will be ignored by Friday. Keep yours to the checks that catch real problems: read the code, verify the calls, test the edge cases, review security, and confirm the fit with your project. Five honest checks, run every time, catch more bugs than a long list that nobody opens.</p>
+<p>Print the checklist or pin it in your pull request template, so it appears exactly when you need it. Review it after each merge and update it when a new kind of AI mistake appears. A living checklist grows with your experience, and after a month it will reflect the exact mistakes your tools actually make. That is when it becomes most valuable, because it stops being generic advice and starts being your own defence.</p>
+<blockquote><p><strong>Bottom line:</strong> Bottom line: An AI code review checklist is not about distrusting the tool. It is about giving fast AI output the same careful review you would give any code before it joins the main branch.</p></blockquote>
+</main>
+<footer class="site"><div class="cols">
+<div><h4>EasyFix Agent</h4><p>Practical guides and honest reviews of free AI tools. We test everything ourselves and only recommend what actually works.</p></div>
+<div><h4>Explore</h4><a href="/">Home</a><a href="/video-studio.html">Video Studio</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></div>
+<div><h4>Legal</h4><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms of Use</a></div>
+</div><div class="copy">&copy; 2026 EasyFix Agent. All rights reserved.</div></footer>
+<script src="/assets/chatbot.js"></script>
+</body>
+</html>
